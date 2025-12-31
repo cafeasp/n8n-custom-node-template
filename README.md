@@ -73,6 +73,7 @@ npm run build
 2. Link your node to n8n:
 ```bash
 npm link
+mkdir -p ~/.n8n/custom
 cd ~/.n8n/custom
 npm link n8n-nodes-custom
 ```
