@@ -78,7 +78,12 @@ cd ~/.n8n/custom
 npm link n8n-nodes-custom
 ```
 
-3. Restart n8n and your node should appear in the nodes panel
+3. Start or restart(control c) n8n:
+```bash
+npx n8n
+```
+
+Your node should now appear in the nodes panel
 
 ### Customization
 
