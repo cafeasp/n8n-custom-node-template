@@ -3,6 +3,7 @@ import {
     INodeExecutionData,
     INodeType,
     INodeTypeDescription,
+    IDataObject,
 } from 'n8n-workflow';
 
 export class Example implements INodeType {
@@ -86,7 +87,7 @@ export class Example implements INodeType {
             const operation = this.getNodeParameter('operation', i) as string;
 
             // Implement your operations here
-            let responseData;
+            let responseData: IDataObject = {};
 
             if (resource === 'exampleResource') {
                 if (operation === 'get') {
