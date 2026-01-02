@@ -95,11 +95,6 @@ source ~/.zshrc  # or source ~/.bash_profile
 npm link
 ```
 
-**Option 3: Change ownership of npm directories**
-```bash
-sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
-```
-
 **Windows Users:**
 - Run your terminal/command prompt as Administrator
 - Then execute the `npm link` commands
