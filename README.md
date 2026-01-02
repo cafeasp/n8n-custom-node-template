@@ -77,9 +77,36 @@ mkdir -p ~/.n8n/custom
 cd ~/.n8n/custom
 npm link n8n-nodes-custom
 ```
+**Option 2: Fix npm permissions (Recommended)**
+```bash
+# Create a directory for global packages
+mkdir ~/.npm-global
+
+# Configure npm to use the new directory
+npm config set prefix '~/.npm-global'
+
+# Add to PATH (add this line to ~/.zshrc or ~/.bash_profile)
+export PATH=~/.npm-global/bin:$PATH
+
+# Reload your shell configuration
+source ~/.zshrc  # or source ~/.bash_profile
+
+# Now npm link should work without sudo
+npm link
+```
+
+**Option 3: Change ownership of npm directories**
+```bash
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+```
+
+**Windows Users:**
+- Run your terminal/command prompt as Administrator
+- Then execute the `npm link` commands
 
 3. Start or restart(control c) n8n:
 ```bash
+npm run build
 npx n8n
 ```
 
